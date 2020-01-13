@@ -8,7 +8,8 @@ body {
 }
 
 .button{
-    display:block;
+    width: 80px;
+    display: block;
     margin:auto;
     background-color: #3495eb;
     border: none;
