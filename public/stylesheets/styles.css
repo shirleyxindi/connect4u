@@ -31,11 +31,28 @@ h1 {
     font-size: 64px;
 }
 
-.board button{
+.boardbutton{
     display: block;
     width: 60px;
     height: 60px;
-    border: none;
-    color: red;
+    background: white;
+    margin: 5px;
     border-radius: 50%;
 }
+
+#boardtable {
+    margin: auto;
+    background-color: #3495eb;
+    padding: 20px;
+    display: table;
+    border-radius: 10%;
+}
+
+#boardtable tr {
+    display: table-cell;
+}
+
+#board {
+    margin: auto; 
+}
+
