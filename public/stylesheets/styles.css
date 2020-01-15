@@ -30,3 +30,12 @@ h1 {
     text-align: center;
     font-size: 64px;
 }
+
+.board button{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: none;
+    color: red;
+    border-radius: 50%;
+}
