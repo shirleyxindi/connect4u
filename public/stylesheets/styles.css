@@ -31,13 +31,28 @@ h1 {
     font-size: 64px;
 }
 
-.board button{
+.boardbutton{
     display: block;
     width: 60px;
     height: 60px;
+    background: white;
+    margin: 5px;
     border-radius: 50%;
-    border: 0;
-    margin: 1px;
-    background: rgb(0, 60, 255);
-    
 }
+
+#boardtable {
+    margin: auto;
+    background-color: #3495eb;
+    padding: 20px;
+    display: table;
+    border-radius: 10%;
+}
+
+#boardtable tr {
+    display: table-cell;
+}
+
+#board {
+    margin: auto; 
+}
+
