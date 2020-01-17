@@ -4,7 +4,7 @@ body {
 
 #home {
     position: relative;
-    top: 20%;
+    top: 10%;
 }
 
 .button{
@@ -21,10 +21,44 @@ body {
     cursor: pointer;
 }
 
+.block{
+    width: 300px;
+    display: block;
+    margin: auto;
+    background-color: #3495eb;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.block1{
+    width: 600px;
+    height: 70px;
+    display: block;
+    margin: auto;
+    background-color: #3495eb;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.font1{
+    font-size: 17px;
+    font-weight: normal;
+}
+
 .button:hover {
     background-color: #0058a6;
 }
-
 
 h1 {
     text-align: center;
@@ -35,9 +69,28 @@ h1 {
     display: block;
     width: 60px;
     height: 60px;
-    background: white;
+    background: rgb(255, 255, 255);
     margin: 5px;
     border-radius: 50%;
+}
+
+#boardbutton1{
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: rgb(247, 231, 2);
+    margin: 5px;
+    border-radius: 50%;
+    float: left;
+}
+#boardbutton2{
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: rgb(247, 2, 2);
+    margin: 5px;
+    border-radius: 50%;
+    float: right;
 }
 
 #boardtable {
@@ -50,6 +103,10 @@ h1 {
 
 #boardtable tr {
     display: table-cell;
+}
+
+#boardtable tr:hover{
+    background-color: #a1ccf1;
 }
 
 #board {

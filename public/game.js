@@ -24,7 +24,17 @@ createBoard();
 
 function calctime()
 {	var t = setTimeout("calctime()",1000);
-    document.getElementById('time').innerHTML="Time passed: " + t + " sec";
+    var m = 0;
+    if(t > 59){
+        m++;
+        t = t - 60;
+    }
+    if(t < 10){
+        document.getElementById('time').innerHTML="Time passed " + m + ":0" + t;
+    }
+    else{
+        document.getElementById('time').innerHTML="Time passed " + m + ":" + t;
+    }
     
 }
 
