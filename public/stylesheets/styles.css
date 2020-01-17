@@ -22,7 +22,7 @@ body {
 }
 
 .button:hover {
-    background-color: #0058a6;
+    background-color: #94cce6;
 }
 
 
@@ -40,9 +40,17 @@ h1 {
     border-radius: 50%;
 }
 
+.red {
+    background: #FFB9B3;
+}
+
+.yellow{
+    background: #FFF9AA;
+}
+
 #boardtable {
     margin: auto;
-    background-color: #3495eb;
+    background-color: #addbf1;
     padding: 20px;
     display: table;
     border-radius: 10%;
@@ -52,11 +60,16 @@ h1 {
     display: table-cell;
 }
 
+#boardtable tr:hover {
+    background-color: #88c6fd;
+}
+
 #board {
     margin: auto; 
 }
 
 #time {
+    margin-top: 10px;
     text-align:center;
 }
 
