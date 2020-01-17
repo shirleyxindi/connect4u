@@ -1,3 +1,6 @@
+var x = document.getElementById("popup");
+x.style.display = "none";
+
 function createBoard(){
     var board = document.getElementById('board');
     var table = document.createElement('table');
@@ -21,20 +24,18 @@ function createBoard(){
     board.appendChild(table);
 }
 
+
 createBoard();
 
 function calctime()
 {	var t = setTimeout("calctime()",1000);
-    var m = 0;
-    if(t > 59){
-        m++;
-        t = t - 60;
-    }
-    if(t < 10){
-        document.getElementById('time').innerHTML="Time passed " + m + ":0" + t;
+    let m = Math.floor(t/60);
+    let s = t % 60;
+    if(s < 10){
+        document.getElementById('time').innerHTML="Time passed " + m + ":0" + s;
     }
     else{
-        document.getElementById('time').innerHTML="Time passed " + m + ":" + t;
+        document.getElementById('time').innerHTML="Time passed " + m + ":" + s;
     }
     
 }
@@ -71,10 +72,7 @@ var buttonClick = function(x){
         }
         if(j == 0){
             alert('Row is full');
-            changePlayer();
-            break;
         }
-        
     }
     if (checkWinHorizontal(x,j) || checkWinVertical(x,j) || checkWinDiagonal(x,j)){
         alert(currentplayer + ' wins!');
@@ -234,7 +232,7 @@ var checkWinDiagonal = function(x,y){
         }    
     }
     console.log(counterleft + " " + counterright);
-    if(counter >= 4){
+    if(counterleft >= 4 || counterright >= 4){
         return true;
     }
     else {
@@ -242,6 +240,6 @@ var checkWinDiagonal = function(x,y){
     }
 }
 
-var stopGame = function(){
-    
-}
+function stopGame() {
+    x.style.display = "block";
+  }
