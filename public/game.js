@@ -1,6 +1,16 @@
 var x = document.getElementById("popup");
 x.style.display = "none";
 
+function checkScreen(){
+    h = window.screen.availHeight;
+    w = window.screen.availWidth;
+    if(h < 768 && w < 1366){
+        alert("Window is too small. Game may look different.");
+    }
+}
+
+checkScreen();
+
 function createBoard(){
     var board = document.getElementById('board');
     var table = document.createElement('table');
@@ -244,7 +254,41 @@ function stopGame() {
     x.style.display = "block";
   }
 
-function nameInput() {
+function inputName() {
     var x = document.getElementById("namePlayer").value;
     document.getElementById("name1").innerHTML = x;
+}
+
+function setup(){
+
+}
+
+var elem = document.documentElement;
+var full = false;
+function Fullscreen() {
+    if(!full){
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+        full = true;
+    }
+    else{
+        if (document.exitFullscreen) {
+        document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+        }
+        full = false;
+    }
+  
 }

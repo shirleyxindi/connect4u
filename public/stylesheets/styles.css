@@ -169,3 +169,10 @@ h1 {
     text-decoration: none;
     vertical-align: middle;
 }
+
+#fullScreen {
+    background-color: #addbf1;
+    position: absolute;
+    right:    0;
+    bottom:   0;
+  }
