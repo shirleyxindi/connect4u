@@ -243,3 +243,8 @@ var checkWinDiagonal = function(x,y){
 function stopGame() {
     x.style.display = "block";
   }
+
+function nameInput() {
+    var x = document.getElementById("namePlayer").value;
+    document.getElementById("name1").innerHTML = x;
+}

@@ -15,20 +15,18 @@
                         The first one to achieve this wins!<br><br><br>
                         Ongoing games: 0<br>
                         Players looking for opponent: 0<br>
-                        Total games played: 0<br>
-                        <form action="/game.js">
-                            Your name: <input type = "text" name = "NamePlayer"
-                        </form>
+                        Total games played: 0<br><br>
+                        Your name: <input type = "text" id = "namePlayer" value="">
                     </p>
                 </a>
             </div>
             <br>
             <div>
-                <from action="/play" method="get">
-                    <a href="game.html" class = "button">
-                    PLAY   
-                    </a>
-                </from>
+                <form action="/play" method="get">
+                    <button class="button" onclick="nameInput()">
+                        PLAY
+                    </button>
+                </form>
             </div>
         </div>
     </body>
