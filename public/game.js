@@ -1,4 +1,9 @@
+var ongoing;
+var players;
+var total;
+
 function createBoard(){
+    ongoing = 1;
     var board = document.getElementById('board');
     var table = document.createElement('table');
     table.setAttribute('id', 'boardtable');
@@ -66,7 +71,6 @@ var buttonClick = function(x){
         
         if(!button.classList.contains('red') && !button.classList.contains('yellow')){
             button.classList.add(currentplayer);
-            
             break;
         }
         if(j == 0){
@@ -76,12 +80,8 @@ var buttonClick = function(x){
         }
         
     }
-    if (checkWinHorizontal(x,j) || checkWinVertical(x,j) || checkWinDiagonal(x,j)){
-        alert(currentplayer + ' wins!');
-        stopGame();
-    }
+    checkWin(x,j);
     changePlayer();
-    
 }
 
 var currentplayer = 'red';
@@ -234,14 +234,24 @@ var checkWinDiagonal = function(x,y){
         }    
     }
     console.log(counterleft + " " + counterright);
-    if(counter >= 4){
+    if(counterleft >= 4 || counterright >= 4){
         return true;
     }
     else {
         return false;
     }
+
 }
 
-var stopGame = function(){
-    
+var checkWin = function(x,y){
+    if(checkWinDiagonal(x,y) || checkWinHorizontal(x,y) || checkWinVertical(x,y)){
+        // alert(currentplayer + ' wins!');
+        var modal = document.getElementById("myModal");
+        modal.style.display = 'block';
+        var winner = document.getElementById('winner');
+        winner.innerHTML = currentplayer + ' wins!';
+
+    }
 }
+
+

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Connect4u</title>
+        <link rel="stylesheet" href="stylesheets/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    </head>
+    <body style ="background-image: radial-gradient(white, blue)">
+        <div id="home">
+            <h1>CONNECT4U</h1>
+            <div>
+                <a class = "block">
+                    Are you ready?
+                    <p class="font1">
+                        Connect 4 tokens of your color.<br>
+                        The first one to achieve this wins!<br><br><br>
+                        <p id='ongoing' class="font1">Ongoing games: 0</p>
+                        <p id='players' class="font1">Players looking for opponent: 0</p>
+                        <p id='total' class="font1">Total games played: 0</p>
+                        <form action="/game.js">
+                            Your name: <input type = "text" name = "NamePlayer">
+                        </form>
+                    </p>
+                </a>
+            </div>
+            <br>
+            <div>
+                <from action="/play" method="get">
+                    <a href="game.html" class = "button">
+                    PLAY   
+                    </a>
+                </from>
+            </div>
+        </div>
+    </body>
+</html>
