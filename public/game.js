@@ -1,6 +1,9 @@
-var ongoing;
-var players;
-var total;
+var game = function(gameID) {
+    this.playerA = null;
+    this.playerB = null;
+    this.id = gameID;
+    this.gameState = "0 JOINT";
+}
 
 function checkScreen(){
     h = window.screen.availHeight;
@@ -72,6 +75,7 @@ var click = function() {
 
 click();
 
+var filled = 0;
 var buttonClick = function(x){
     for(var j = 5; j > -1; j--){
         var button = document.getElementById('button' + x + j);
@@ -79,6 +83,7 @@ var buttonClick = function(x){
         
         if(!button.classList.contains('red') && !button.classList.contains('yellow')){
             button.classList.add(currentplayer);
+            filled++;
             break;
         }
         if(j == 0){
@@ -98,6 +103,15 @@ var changePlayer = function(){
         currentplayer = 'red';
     }
     //console.log(currentplayer);
+}
+
+var checkDraw = function(){
+    if(filled == 42){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 var checkWinHorizontal = function(x,y){
@@ -255,7 +269,12 @@ var checkWin = function(x,y){
         modal.style.display = 'block';
         var winner = document.getElementById('winner');
         winner.innerHTML = currentplayer + ' wins!';
-
+    }
+    else if(checkDraw()){
+        var modal = document.getElementById("myModal");
+        modal.style.display = 'block';
+        var winner = document.getElementById('winner');
+        winner.innerHTML = "It's a draw!"
     }
 }
 
@@ -264,9 +283,51 @@ function inputName() {
     document.getElementById("name1").innerHTML = x;
 }
 
-function setup(){
+game.prototype.addPlayer = function(p) {
+    console.assert(
+      p instanceof Object,
+      "%s: Expecting an object (WebSocket), got a %s",
+      arguments.callee.name,
+      typeof p
+    );
+  
+    if (this.gameState != "0 JOINT" && this.gameState != "1 JOINT") {
+      return new Error(
+        "Invalid call to addPlayer, current state is %s",
+        this.gameState
+      );
+    }
+  
+    /*
+     * revise the game state
+     */
+  
+    var error = this.setStatus("1 JOINT");
+    if (error instanceof Error) {
+      this.setStatus("2 JOINT");
+    }
+  
+    if (this.playerA == null) {
+      this.playerA = p;
+      return "A";
+    } else {
+      this.playerB = p;
+      return "B";
+    }
+  };
 
-}
+  game.prototype.setStatus = function(w) {
+    console.assert(
+      typeof w == "string",
+      "%s: Expecting a string, got a %s",
+      arguments.callee.name,
+      typeof w
+    );
+
+    this.gameState = w;
+    console.log("[STATUS] %s", this.gameState);
+  };
+  
 
 var elem = document.documentElement;
 var full = false;
@@ -297,3 +358,5 @@ function Fullscreen() {
     }
   
 }
+
+module.exports = game;

@@ -53,21 +53,6 @@ body {
     font-weight: bold;
 }
 
-.blockgame{
-    width: 600px;
-    height: 30px;
-    display: block;
-    margin: auto;
-    background-color: #addbf1;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: bold;
-    text-align:center;
-}
 
 .blocktime{
     width: 250px;
@@ -96,6 +81,7 @@ body {
 h1 {
     text-align: center;
     font-size: 64px;
+    margin-bottom: 0;
 }
 
 .boardbutton{
@@ -106,21 +92,52 @@ h1 {
     margin: 5px;
     border-radius: 50%;
 }
-
-#boardbutton1{
-    display: block;
+.playerbutton{
+    display: inline-block;
+    vertical-align: middle;
     width: 40px;
     height: 40px;
-    background: #FFF9AA;
     border-radius: 50%;
+    margin-top: 50%;
+}
+
+ul {
+    width: 600px;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #addbf1;
+    position: relative;
+  }
+  
+  .left {
+    margin-left: 10px;
+    float: left;
+  }
+
+  .right {
+      float: right;
+      margin-right: 10px;
+  }
+  
+li p {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+#leftplayer{
+    width: 50%;
+    margin: 10px;
     float: left;
 }
-#boardbutton2{
-    display: block;
-    width: 40px;
-    height: 40px;
-    background: #FFB9B3;
-    border-radius: 50%;
+#rightplayer{
+    width: 50%;
+    margin: 10px;
     float: right;
 }
 
