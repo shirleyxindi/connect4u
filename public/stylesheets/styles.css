@@ -96,6 +96,7 @@ body {
 h1 {
     text-align: center;
     font-size: 64px;
+    margin-bottom: 0;
 }
 
 .boardbutton{

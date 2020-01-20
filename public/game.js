@@ -1,3 +1,4 @@
+
 var ongoing;
 var players;
 var total;
