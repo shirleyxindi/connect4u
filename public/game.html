@@ -5,19 +5,14 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     </head>
 
-    <body style ="background-image: radial-gradient(white, white, blue)">
+    <body>
         <h1 id="id1">CONNECT4U</h1>
         <div id="board"></div>
         <br>
-        <div class = "block1">
+        <div class = "blockgame">
             <div id="boardbutton1"></div>
-            <a>
-                Name player1
-            </a>
+                <p id="name1"></p>
             <div id="boardbutton2"></div>
-            <a">
-                Name player2
-            </a>
         </div>
         <br>
         <div id="time" class = "block"></div>
@@ -31,7 +26,9 @@
           
         </div>
 
+        <button id="fullScreen" class = "button" onclick="Fullscreen();">Fullscreen</button>
         <script src="game.js"></script>
         <script src="config.js"></script>
+
     </body>
 </html>

@@ -2,6 +2,16 @@ var ongoing;
 var players;
 var total;
 
+function checkScreen(){
+    h = window.screen.availHeight;
+    w = window.screen.availWidth;
+    if(h < 768 && w < 1366){
+        alert("Window is too small. Game may look different.");
+    }
+}
+
+checkScreen();
+
 function createBoard(){
     ongoing = 1;
     var board = document.getElementById('board');
@@ -26,20 +36,18 @@ function createBoard(){
     board.appendChild(table);
 }
 
+
 createBoard();
 
 function calctime()
 {	var t = setTimeout("calctime()",1000);
-    var m = 0;
-    if(t > 59){
-        m++;
-        t = t - 60;
-    }
-    if(t < 10){
-        document.getElementById('time').innerHTML="Time passed " + m + ":0" + t;
+    let m = Math.floor(t/60);
+    let s = t % 60;
+    if(s < 10){
+        document.getElementById('time').innerHTML="Time passed " + m + ":0" + s;
     }
     else{
-        document.getElementById('time').innerHTML="Time passed " + m + ":" + t;
+        document.getElementById('time').innerHTML="Time passed " + m + ":" + s;
     }
     
 }
@@ -75,10 +83,7 @@ var buttonClick = function(x){
         }
         if(j == 0){
             alert('Row is full');
-            changePlayer();
-            break;
         }
-        
     }
     checkWin(x,j);
     changePlayer();
@@ -254,4 +259,41 @@ var checkWin = function(x,y){
     }
 }
 
+function inputName() {
+    var x = document.getElementById("namePlayer").value;
+    document.getElementById("name1").innerHTML = x;
+}
 
+function setup(){
+
+}
+
+var elem = document.documentElement;
+var full = false;
+function Fullscreen() {
+    if(!full){
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+        full = true;
+    }
+    else{
+        if (document.exitFullscreen) {
+        document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+        }
+        full = false;
+    }
+  
+}

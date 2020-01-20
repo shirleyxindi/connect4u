@@ -1,5 +1,7 @@
 body {
     font-family: 'Raleway', regular;
+    overflow: hidden;
+    background-color: #D9FFDF
 }
 
 #home {
@@ -8,10 +10,10 @@ body {
 }
 
 .button{
-    width: 80px;
+    width: 200px;
     display: block;
     margin:auto;
-    background-color: #3495eb;
+    background-color: #addbf1;
     border: none;
     color: white;
     padding: 15px 25px;
@@ -19,13 +21,29 @@ body {
     text-decoration: none;
     font-size: 32px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-.block{
+.buttonpopup{
+    width: 95px;
+    display: block;
+    margin:auto;
+    background-color: #addbf1;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.blocksplash{
     width: 300px;
     display: block;
     margin: auto;
-    background-color: #3495eb;
+    background-color: #addbf1;
     border: none;
     color: white;
     padding: 15px 25px;
@@ -35,20 +53,35 @@ body {
     font-weight: bold;
 }
 
-.block1{
+.blockgame{
     width: 600px;
-    height: 70px;
+    height: 30px;
     display: block;
     margin: auto;
-    background-color: #3495eb;
+    background-color: #addbf1;
     border: none;
     color: white;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
-    font-size: 32px;
+    font-size: 25px;
     font-weight: bold;
+    text-align:center;
+}
+
+.blocktime{
+    width: 250px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    background-color: #addbf1;
+    border: none;
+    color: white;
+    padding: 15px 25px;
     text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .font1{
@@ -76,19 +109,17 @@ h1 {
 
 #boardbutton1{
     display: block;
-    width: 60px;
-    height: 60px;
-    background: rgb(247, 231, 2);
-    margin: 5px;
+    width: 40px;
+    height: 40px;
+    background: #FFF9AA;
     border-radius: 50%;
     float: left;
 }
 #boardbutton2{
     display: block;
-    width: 60px;
-    height: 60px;
-    background: rgb(247, 2, 2);
-    margin: 5px;
+    width: 40px;
+    height: 40px;
+    background: #FFB9B3;
     border-radius: 50%;
     float: right;
 }
@@ -171,3 +202,22 @@ h1 {
     background-color: #94cce6;
 }
 
+.popup{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    background-color: #000000;
+    color: white;
+    opacity: 50%;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+#fullScreen {
+    background-color: #addbf1;
+    position: absolute;
+    right:    0;
+    bottom:   0;
+  }
