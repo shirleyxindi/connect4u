@@ -24,21 +24,6 @@ body {
     font-weight: bold;
 }
 
-.buttonpopup{
-    width: 95px;
-    display: block;
-    margin:auto;
-    background-color: #addbf1;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 32px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
 .blocksplash{
     width: 300px;
     display: block;
@@ -205,7 +190,7 @@ li p {
   .pabutton {
       display: block;
       margin: auto;
-      background-color: #3495eb;
+      background-color: #addbf1;
       border: none;
       color: white;
       padding: 15px 25px;
@@ -219,18 +204,6 @@ li p {
     background-color: #94cce6;
 }
 
-.popup{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0px;
-    background-color: #000000;
-    color: white;
-    opacity: 50%;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-}
 
 #fullScreen {
     background-color: #addbf1;
